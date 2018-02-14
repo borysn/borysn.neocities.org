@@ -1,0 +1,36 @@
+{
+  "name": "tbny.space",
+  "version": "1.0.0",
+  "description": "tbny.space website source",
+  "private": true,
+  "main": "index.html",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "npm run gulp",
+    "watch": "npm run gulp watch",
+    "clean": "npm run gulp clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borysn/tbny.space.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "tbny"
+  ],
+  "author": "borysn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/borysn/tbny.space/issues"
+  },
+  "homepage": "https://github.com/borysn/tbny.space#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
