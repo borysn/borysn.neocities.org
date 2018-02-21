@@ -11,7 +11,9 @@ var cleancss = require('gulp-clean-css');
 const build = {dir:'./build'};
 const src = {
   sass:{files:'./src/sass/**/*.scss'},
-  html:{files:'./src/**/*.html'}
+  font:{files:'./node_modules/typeface-palanquin/files/*'},
+  html:{files:'./src/**/*.html'},
+  js:{files:'./src/js/**/*.js'}
 };
 
 // build sass
@@ -28,6 +30,12 @@ gulp.task('sass:watch', function() {
 	gulp.watch(src.sass.files, ['sass']);
 });
 
+// copy fonts
+gulp.task('font:copy', function() {
+  return gulp.src(src.font.files)
+    .pipe(gulp.dest(build.dir + '/css/fonts'));
+});
+
 // copy html
 gulp.task('html:copy', function() {
 	return gulp.src(src.html.files)
@@ -39,16 +47,27 @@ gulp.task('html:watch', function() {
   gulp.watch(src.html.files, ['html:copy']);
 });
 
+// copy js
+gulp.task('js:copy', function() {
+  return gulp.src(src.js.files)
+    .pipe(gulp.dest(build.dir + '/js'));
+});
+
+// watch js
+gulp.task('js:watch', function() {
+  gulp.watch(src.js.files, ['js:copy']);
+});
+
 // clean
 gulp.task('clean', function() {
 	return del([build.dir]);
 });
 
 // build
-gulp.task('build', ['sass', 'html:copy']);
+gulp.task('build', ['sass', 'js:copy', 'font:copy', 'html:copy']);
 
 // watch
-gulp.task('watch', ['sass:watch', 'html:watch']);
+gulp.task('watch', ['sass:watch', 'js:watch', 'html:watch']);
 
 // default task
 gulp.task('default', ['build']);

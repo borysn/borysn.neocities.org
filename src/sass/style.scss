@@ -1,0 +1,90 @@
+// fonts
+@import 'palanquin-font';
+
+// colors
+$bg-color: #000000;
+$text-color: #3e3e3e;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+#content-container {
+  width: 100%;
+}
+
+#title-container {
+  margin: 0 auto;
+  width: 19em;
+  text-align: center;
+}
+
+#title-text {
+  font-family: Palanquin;
+  font-size: 4em;
+  font-weight: 700;
+  color: $text-color;
+}
+
+#about-container {
+  margin: 0 auto;
+  width: 24em;
+  text-align: center;
+}
+
+#about-text {
+  font-family: Palanquin;
+  font-size: 1em;
+  font-weight: 100;
+  color: $text-color;
+}
+
+.padding {
+  height: 2em;
+}
+
+#link-container {
+  margin: 0 auto;
+  width: 18em;
+}
+
+.link {
+  font-family: Palanquin;
+  font-size: 1em;
+  font-weight: 200;
+  width: 6em;
+  margin: .1em auto;
+  border-style: solid;
+  border-width: 0 .1em 0 .1em;
+  border-radius: 10%;
+  border-color: $text-color;
+  text-align: center;
+}
+
+.link > a:link {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.link > a:visited {
+  color: $text-color;
+  text-decoration: none;
+}
+
+.link > a:hover {
+  text-decoration: underline;
+}
+
+#bg-anim {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
