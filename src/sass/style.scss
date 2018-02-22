@@ -5,6 +5,12 @@
 $bg-color: #000000;
 $text-color: #6e6e6e;
 
+// mixins
+@mixin link-style() {
+  color: $text-color;
+  text-decoration: none;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -13,7 +19,7 @@ $text-color: #6e6e6e;
 body {
   background-color: $bg-color;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
   user-select: none;
 }
 
@@ -70,16 +76,35 @@ body {
 }
 
 .link > a:link {
-  color: $text-color;
-  text-decoration: none;
+  @include link-style();
 }
 
 .link > a:visited {
-  color: $text-color;
-  text-decoration: none;
+  @include link-style();
 }
 
 .link > a:hover {
+  text-decoration: underline;
+}
+
+#footer-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 4em;
+  font-family: Palanquin;
+  font-size: 1em;
+  font-weight: 100;
+}
+
+#footer-container > a:link {
+  @include link-style();
+}
+
+#footer-container > a:visited {
+  @include link-style();
+}
+
+#footer-container > a:hover {
   text-decoration: underline;
 }
 
