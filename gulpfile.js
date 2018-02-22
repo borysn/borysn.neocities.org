@@ -13,7 +13,8 @@ const src = {
   sass:{files:'./src/sass/**/*.scss'},
   font:{files:'./node_modules/typeface-palanquin/files/*'},
   html:{files:'./src/**/*.html'},
-  js:{files:'./src/js/**/*.js'}
+  js:{files:'./src/js/**/*.js'},
+  lib:{files:'./node_modules/particles.js/particles.js'}
 };
 
 // build sass
@@ -58,13 +59,19 @@ gulp.task('js:watch', function() {
   gulp.watch(src.js.files, ['js:copy']);
 });
 
+// copy libs
+gulp.task('lib:copy', function() {
+  return gulp.src(src.lib.files)
+    .pipe(gulp.dest(build.dir + '/js/libs'));
+});
+
 // clean
 gulp.task('clean', function() {
   return del([build.dir]);
 });
 
 // build
-gulp.task('build', ['sass', 'js:copy', 'font:copy', 'html:copy']);
+gulp.task('build', ['sass', 'js:copy', 'lib:copy', 'font:copy', 'html:copy']);
 
 // watch
 gulp.task('watch', ['sass:watch', 'js:watch', 'html:watch']);
