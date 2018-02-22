@@ -12,6 +12,8 @@ $text-color: #3e3e3e;
 
 body {
   background-color: $bg-color;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #content-container {
