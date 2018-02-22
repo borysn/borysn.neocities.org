@@ -58,7 +58,7 @@ gulp.task('js:minify', function() {
 
 // watch js
 gulp.task('js:watch', function() {
-  gulp.watch(src.js.files, ['js:copy']);
+  gulp.watch(src.js.files, ['js:minify']);
 });
 
 // copy libs
