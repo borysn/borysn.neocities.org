@@ -18,11 +18,6 @@ particlesJS('particles-js', {
        },
        "polygon": {
          "nb_sides": 5
-       },
-       "image": {
-         "src": "img/github.svg",
-         "width": 100,
-         "height": 100
        }
      },
      "opacity": {
@@ -70,7 +65,7 @@ particlesJS('particles-js', {
      "detect_on": "canvas",
      "events": {
        "onhover": {
-         "enable": true,
+         "enable": false,
          "mode": "repulse"
        },
        "onclick": {
