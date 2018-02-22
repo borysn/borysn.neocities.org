@@ -6,6 +6,7 @@ var del = require('del');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleancss = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
 
 // project vars
 const build = {dir:'./build'};
@@ -49,8 +50,9 @@ gulp.task('html:watch', function() {
 });
 
 // copy js
-gulp.task('js:copy', function() {
-  return gulp.src(src.js.files)
+gulp.task('js:minify', function() {
+  gulp.src(src.js.files)
+    .pipe(uglify())
     .pipe(gulp.dest(build.dir + '/js'));
 });
 
@@ -60,8 +62,9 @@ gulp.task('js:watch', function() {
 });
 
 // copy libs
-gulp.task('lib:copy', function() {
+gulp.task('lib:minify', function() {
   return gulp.src(src.lib.files)
+    .pipe(uglify())
     .pipe(gulp.dest(build.dir + '/js/libs'));
 });
 
@@ -71,7 +74,7 @@ gulp.task('clean', function() {
 });
 
 // build
-gulp.task('build', ['sass', 'js:copy', 'lib:copy', 'font:copy', 'html:copy']);
+gulp.task('build', ['sass', 'js:minify', 'lib:minify', 'font:copy', 'html:copy']);
 
 // watch
 gulp.task('watch', ['sass:watch', 'js:watch', 'html:watch']);
