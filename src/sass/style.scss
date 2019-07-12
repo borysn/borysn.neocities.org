@@ -30,13 +30,21 @@ body {
 #title-container {
   margin: 0 auto;
   text-align: center;
+  color: $text-color;
 }
 
 #title-text {
   font-family: Palanquin;
   font-size: 4em;
   font-weight: 700;
-  color: $text-color;
+}
+
+#title-contact a, a.hover, a.vistied, a.active {
+    color: $text-color
+}
+
+#title-pgp {
+    font-size: .85em
 }
 
 #about-container {
@@ -50,6 +58,7 @@ body {
   font-size: 1em;
   font-weight: 100;
   color: $text-color;
+  line-height: 0em;
 }
 
 .padding {
@@ -64,7 +73,7 @@ body {
 .link {
   font-family: Palanquin;
   font-size: 1em;
-  font-weight: 200;
+  font-weight: 700;
   width: 6em;
   margin: .1em auto;
   border-style: solid;
