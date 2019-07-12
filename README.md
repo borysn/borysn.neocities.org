@@ -1,3 +1,3 @@
 # borysn.neocities.org
 
-a personal website to encourage myself to continue growing
+a personal website encouraging myself to continue growing
